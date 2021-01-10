@@ -3,11 +3,9 @@
 //============================= Getting Started ===============================================================================================================================================
 //===========================================================================
 
-
+// Configuration.h
 #pragma once
 #define CONFIGURATION_H_VERSION 020007
-
-// @section info
 
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(GSieg_v3, CR-10s S5)" // Who made the changes.
@@ -244,7 +242,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 } // Stock Creality
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 402 } // Creality with Micro Swiss Direct Drive
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 3200, 402 } // BTT with TMC2208 v3.0 and Micro Swiss Direct Drive
 
 /**
  * Default Max Feed Rate (mm/s)
