@@ -170,10 +170,7 @@
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
-#define USE_ZMIN_PLUG
-//#define USE_XMAX_PLUG
-//#define USE_YMAX_PLUG
-//#define USE_ZMAX_PLUG
+//#define USE_ZMIN_PLUG
 
 // Enable pullup for all endstops to prevent a floating state
 #define ENDSTOPPULLUPS
@@ -241,8 +238,8 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 } // Stock Creality
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415 } // Creality with Bondtech extruder
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 } // Stock Creality
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 402 } // Creality with Micro Swiss Direct Drive
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -499,8 +496,8 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
-#define INVERT_Y_DIR false
+#define INVERT_X_DIR true
+#define INVERT_Y_DIR true
 #define INVERT_Z_DIR true
 
 // @section extruder
