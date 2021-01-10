@@ -1,6 +1,7 @@
-//============================================================================
-//============================================================================
-//============================================================================
+//====================================================================================================================================================================================
+//===========================================================================
+//============================= Getting Started ===============================================================================================================================================
+//===========================================================================
 
 
 #pragma once
@@ -32,13 +33,15 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "CR-10 S5"
+#define CUSTOM_MACHINE_NAME "Bertha-5"
+
+// @section extruder
 
 #define EXTRUDERS 1
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
 
 //===========================================================================
-//============================= Thermal Settings ============================
+//============================= Thermal Settings ==============================================================================================================================================
 //===========================================================================
 
 #define TEMP_SENSOR_0 1
@@ -96,7 +99,7 @@
 #define BED_MAXTEMP      130
 
 //===========================================================================
-//============================= PID Settings ================================
+//============================= PID Settings ==================================================================================================================================================
 //===========================================================================
 // PID Tuning Guide here: https://reprap.org/wiki/PID_Tuning
 
@@ -108,7 +111,7 @@
 
 #if ENABLED(PIDTEMP)
   //#define PID_EDIT_MENU         // Add PID editing to the "Advanced Settings" menu. (~700 bytes of PROGMEM)
-  //#define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of PROGMEM)
+  #define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of PROGMEM)
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
 
@@ -171,6 +174,8 @@
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 //#define USE_ZMIN_PLUG
+
+
 
 // Enable pullup for all endstops to prevent a floating state
 #define ENDSTOPPULLUPS
@@ -339,10 +344,10 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -532,8 +537,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 500 // Nozzle is at X4 when homed
-#define Y_BED_SIZE 500 // Nozzle is at Y2 when homed
+#define X_BED_SIZE 500 // Nozzle is at X5 when homed
+#define Y_BED_SIZE 500 // Nozzle is at Y5 when homed
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS -5
@@ -685,7 +690,7 @@
 #elif ENABLED(AUTO_BED_LEVELING_UBL)
 
   //===========================================================================
-  //========================= Unified Bed Leveling ============================
+  //========================= Unified Bed Leveling ==============================================================================================================================================
   //===========================================================================
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
@@ -703,7 +708,7 @@
 #elif ENABLED(MESH_BED_LEVELING)
 
   //===========================================================================
-  //=================================== Mesh ==================================
+  //=================================== Mesh ====================================================================================================================================================
   //===========================================================================
 
   #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
@@ -834,7 +839,7 @@
 #endif
 
 //=============================================================================
-//============================= Additional Features ===========================
+//============================= Additional Features =============================================================================================================================================
 //=============================================================================
 
 // @section extras
@@ -885,7 +890,7 @@
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "ABS"
-#define PREHEAT_2_TEMP_HOTEND 250
+#define PREHEAT_2_TEMP_HOTEND 240
 #define PREHEAT_2_TEMP_BED     80
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
@@ -941,7 +946,7 @@
  *
  * View the current statistics with M78.
  */
-//#define PRINTCOUNTER
+#define PRINTCOUNTER
 
 //=============================================================================
 //============================= LCD and SD support ============================
