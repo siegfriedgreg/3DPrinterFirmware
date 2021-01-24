@@ -1,4 +1,4 @@
-G-CODE Snippets Below:
+Copy From RAW View Data!!!
 
 ==========================================================================================================================
 ==========================================================================================================================
@@ -6,9 +6,7 @@ G-CODE Snippets Below:
 
 ; Start custom Start G-Code
 
-M117 HEATING HOTEND
-M104 S175 ; Heat Extruder to 175
-
+M117 HOMING
 G28 ; HOMING
 
 G92 E0 ; Reset Extruder
@@ -26,7 +24,7 @@ G1  F500 E5; Pre Prime for Purge Wipe
 M117 PURGING!
 G1 X0.1 Y200.0 Z0.3 F1500.0 E15 ; draw 1st line
 G1 X0.4 Y200.0 Z0.3 F5000.0 ; move to side a little
-G1 X0.4 Y20 Z0.3 F1500.0 E30 ; draw 2nd line
+G1 X0.4 Y30 Z0.3 F1500.0 E30 ; draw 2nd line
 G92 E0 ; reset extruder
 G1 Z1.0 F3000 ; move z up little to prevent scratching of surface
 
