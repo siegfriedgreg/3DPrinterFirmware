@@ -66,7 +66,7 @@
 #define HEATER_0_MAXTEMP 300
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
-#define BED_MAXTEMP      130
+#define BED_MAXTEMP      135  // Modified to achieve bed temp with digital temp gauge.
 
 //===========================================================================
 //============================= PID Settings ==================================================================================================================================================
