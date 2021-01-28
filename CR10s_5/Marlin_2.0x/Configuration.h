@@ -34,7 +34,7 @@
 //===========================================================================
 
 #define TEMP_SENSOR_0 1
-#define TEMP_SENSOR_BED 11
+#define TEMP_SENSOR_BED 11    // Keenovo Silicon Heating Pad
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
 #define DUMMY_THERMISTOR_998_VALUE 25
@@ -204,24 +204,24 @@
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 280 } // BTT with TMC2208 v3.0 and Micro Swiss Direct Drive
 
 //-------------------------- mm/s         X,   Y, Z, E0 [, E1[, E2...]]
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 160, 160, 5, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 300, 300, 10, 50 } // ...or, set your own edit limits
 #endif
 
 //------------------------- mm/s          X,   Y,   Z,   E0 [, E1[, E2...]]
-#define DEFAULT_MAX_ACCELERATION      { 400, 400, 100, 1000 }
+#define DEFAULT_MAX_ACCELERATION      { 200, 200, 50, 500 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 200, 20000 } // ...or, set your own edit limits
+  #define MAX_ACCEL_EDIT_VALUES       { 600, 600, 200, 2000 } // ...or, set your own edit limits
 #endif
 
-#define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  500    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          150    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  200    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   150    // X, Y, Z acceleration for travel (non printing) moves
 
 // Default Jerk limits (mm/s)
 //#define CLASSIC_JERK
@@ -273,7 +273,7 @@
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_SPEED (133*60)
+#define XY_PROBE_SPEED (30*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -351,11 +351,6 @@
 #define INVERT_E0_DIR true          // Micro Swiss Direct Drive
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
-#define INVERT_E3_DIR false
-#define INVERT_E4_DIR false
-#define INVERT_E5_DIR false
-#define INVERT_E6_DIR false
-#define INVERT_E7_DIR false
 
 //#define NO_MOTION_BEFORE_HOMING // Inhibit movement until all axes have been homed
 //#define UNKNOWN_Z_NO_RAISE      // Don't raise Z (lower the bed) if Z is "unknown." For beds that fall when Z is powered off.
@@ -373,8 +368,8 @@
 #define Y_BED_SIZE 500 // Nozzle is at Y5 when homed
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -5
-#define Y_MIN_POS -5
+#define X_MIN_POS -5  // Adds a 5mm buffer for clips
+#define Y_MIN_POS -5  // Adds a 5mm buffer for clips
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
