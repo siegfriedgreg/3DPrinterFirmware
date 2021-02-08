@@ -6,4 +6,6 @@ My personal set of configs for my 3D printers.
 
 3- HotBox 310 is a filament dryer with CR-10s S5 guts.
 
+*** ALL THREE PROJECTS USE MARLIN_2.0_BUGFIX
+
 END OF FILE
