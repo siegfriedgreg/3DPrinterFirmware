@@ -41,7 +41,7 @@ M221 S100 ; Reset Extrude factor override percentage to default (100%)
 
 G91 ; Set coordinates to relative
 
-G1 F35 E-1.5 ; Retract filament 3 mm to prevent oozing
+G1 F35 E-1.5 ; Retract filament 1.5 mm to prevent oozing
 G1 F3000 Z10 ; Move Z Axis up 10 mm to allow filament ooze freely
 
 G90 ; Set coordinates to absolute
