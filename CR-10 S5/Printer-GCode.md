@@ -3,8 +3,6 @@ Copy From RAW View Data!!!
 Cr10-S5 Start/End G-Code
 
 ================================================================================
-================================================================================
-================================================================================
 
 ; Start of custom Start G-Code
 
@@ -18,7 +16,7 @@ M109 R{material_print_temperature_layer_0} ; Wait for Extruder temperature
 M420 S1 ; LOAD SAVED MESH
 
 M117 MENUVERING
-G1 X1.0 Y20  F4000.0 ; move to start-line position
+G1 X1.0 Y20  F4000.0 ; move to start position
 G1 Z1.0 F1000; lower nozzle to bed
 G1  F500 E5; Pre Prime for Purge Wipe
 G4 S1 ; Wait 1 second
@@ -35,8 +33,6 @@ M117 MAGIC PRINT!
 ; End of custom Start G-Code
 
 ================================================================================
-================================================================================
-================================================================================
 
 ; Start of custom End G-code
 
@@ -50,10 +46,10 @@ G1 F3000 Z10 ; Move Z Axis up 10 mm to allow filament ooze freely
 
 G90 ; Set coordinates to absolute
 
-G1 X20 Y200 F1000 ; Move Bed to the front
+G1 X20 Y20 F1000 ; Move Bed to the front
 
 M140 S0 ; Turn off bed
-M109 R150 ; Wait for Extruder to cool down
+M109 R150 ; Wait for Extruder to cool to 150c
 M104 S0 ; Turn off extruder
 M107 ; Turn off Fan
 
@@ -61,6 +57,4 @@ M84 X Y E ; Disable all steppers but Z
 
 ; End of custom End G-code
 
-================================================================================
-================================================================================
 ================================================================================
