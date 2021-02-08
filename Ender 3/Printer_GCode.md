@@ -3,8 +3,6 @@ Copy From RAW View Data!!!
 Ender 3 Start/End G-Code
 
 ================================================================================
-================================================================================
-================================================================================
 
 ; Start of custom Start G-Code
 
@@ -18,7 +16,7 @@ M109 R{material_print_temperature_layer_0} ; Wait for Extruder temperature
 M420 S1 ; LOAD SAVED MESH
 
 M117 MENUVERING
-G1 X1.0 Y20  F4000.0 ; move to start-line position
+G1 X1.0 Y20  F4000.0 ; move to start position
 G1 Z1.0 F1000; lower nozzle to bed
 G1  F500 E5; Pre Prime for Purge Wipe
 G4 S1 ; Wait 1 second
@@ -35,8 +33,6 @@ M117 MAGIC PRINT!
 ; End of custom Start G-Code
 
 ================================================================================
-================================================================================
-================================================================================
 
 ; Start of custom End G-code
 
@@ -45,7 +41,7 @@ M221 S100 ; Reset Extrude factor override percentage to default (100%)
 
 G91 ; Set coordinates to relative
 
-G1 F35 E-1.5 ; Retract filament 3 mm to prevent oozing
+G1 F35 E-1.5 ; Retract filament 1.5 mm to prevent oozing
 G1 F3000 Z10 ; Move Z Axis up 10 mm to allow filament ooze freely
 
 G90 ; Set coordinates to absolute
@@ -61,6 +57,4 @@ M84 X Y E ; Disable all steppers but Z
 
 ; End of custom End G-code
 
-================================================================================
-================================================================================
 ================================================================================
