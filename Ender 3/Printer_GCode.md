@@ -11,6 +11,7 @@ G28 ; HOMING
 
 G92 E0 ; Reset Extruder
 M117 SET HEAT
+M190 R{print_bed_temperature} ; Wait for the Bed temperature
 M109 R{material_print_temperature_layer_0} ; Wait for Extruder temperature
 
 M420 S1 ; LOAD SAVED MESH
@@ -49,7 +50,7 @@ G90 ; Set coordinates to absolute
 G1 X20 Y200 F1000 ; Move Bed to the front
 
 M140 S0 ; Turn off bed
-M109 R150 ; Wait for Extruder to cool down
+M109 R170 ; Wait for Extruder to cool down
 M104 S0 ; Turn off extruder
 M107 ; Turn off Fan
 
